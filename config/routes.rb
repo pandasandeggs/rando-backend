@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       resources :users, only: [:create, :index, :update, :destroy]
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
+      get 'restaurants/random', to: 'restaurants#random'
+      post 'restaurants/random', to: 'restaurants#random'
+      get 'activities/random', to: 'activities#random'
+      post 'activities/random', to: 'activities#random'
       resources :restaurants
       resources :activities
       resources :user_restaurants

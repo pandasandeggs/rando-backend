@@ -6,11 +6,6 @@ class Api::V1::RestaurantsController < ApplicationController
     render json: @restaurants, include: [:users]
   end
 
-  # def random
-  #   @restaurants = Restaurant.all
-  #   redirect_to get_random_restaurant
-  # end
-
   def select_restaurant
     @restaurant = Restaurant.find(params[:id])
     render json: @restaurant, include: [:users]
@@ -23,7 +18,9 @@ class Api::V1::RestaurantsController < ApplicationController
   end
 
   private
+
   def restaurant_params
     params.permit(:name,:url)
   end
+  
 end
